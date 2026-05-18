@@ -1,0 +1,256 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   TikTok Free Like
+  </title>
+  <link href="css/css2" rel="stylesheet"/>
+  <style>
+   *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#0f0f0f;
+    position:relative;
+}
+
+/* Animated Background */
+.bg{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at top left,#ff0050 0%,transparent 25%),
+    radial-gradient(circle at bottom right,#00f2ea 0%,transparent 25%),
+    #0f0f0f;
+    filter:blur(30px);
+    animation:bgMove 10s infinite alternate;
+}
+
+@keyframes bgMove{
+    0%{
+        transform:scale(1);
+    }
+    100%{
+        transform:scale(1.2);
+    }
+}
+
+/* Floating Hearts */
+.heart{
+    position:absolute;
+    color:rgba(255,255,255,0.08);
+    font-size:40px;
+    animation:float 10s linear infinite;
+}
+
+.heart:nth-child(1){
+    left:10%;
+    top:20%;
+}
+
+.heart:nth-child(2){
+    right:15%;
+    top:15%;
+    font-size:60px;
+}
+
+.heart:nth-child(3){
+    bottom:15%;
+    left:20%;
+    font-size:80px;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0px) rotate(0deg);
+    }
+    100%{
+        transform:translateY(-50px) rotate(360deg);
+    }
+}
+
+/* Main Box */
+.container{
+    position:relative;
+    z-index:2;
+    width:90%;
+    max-width:420px;
+    padding:45px 30px;
+    border-radius:30px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.1);
+    box-shadow:0 0 40px rgba(0,0,0,0.5);
+    text-align:center;
+}
+
+/* Logo */
+.logo{
+    font-size:55px;
+    margin-bottom:15px;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.15);
+    }
+}
+
+/* Title */
+h1{
+    color:#fff;
+    font-size:34px;
+    font-weight:700;
+    margin-bottom:30px;
+    text-shadow:0 0 15px rgba(255,255,255,0.4);
+}
+
+/* Main Button */
+button{
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:18px;
+    background:linear-gradient(45deg,#ff0050,#00f2ea);
+    color:#fff;
+    font-size:22px;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 0 25px rgba(255,0,80,0.5);
+}
+
+button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 40px rgba(0,242,234,0.7);
+}
+
+/* Developer Button */
+.dev-btn{
+    display:block;
+    width:100%;
+    margin-top:18px;
+    padding:16px;
+    border-radius:16px;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:600;
+    color:#fff;
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.15);
+    transition:0.3s;
+}
+
+.dev-btn:hover{
+    background:rgba(255,255,255,0.2);
+    transform:scale(1.03);
+}
+
+/* Status */
+.status{
+    margin-top:25px;
+    color:#ffffff;
+    font-size:18px;
+    font-weight:600;
+    display:none;
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+    0%,100%{
+        opacity:1;
+    }
+    50%{
+        opacity:0.4;
+    }
+}
+
+/* Footer */
+.footer{
+    margin-top:30px;
+    color:#888;
+    font-size:13px;
+}
+  </style>
+ </head>
+ <body>
+  <div class="bg">
+  </div>
+  <div class="heart">
+   ❤
+  </div>
+  <div class="heart">
+   ❤
+  </div>
+  <div class="heart">
+   ❤
+  </div>
+  <div class="container">
+   <div class="logo">
+    ❤
+   </div>
+   <h1>
+    TikTok Free Like
+   </h1>
+   <button id="playBtn">
+    ❤ TIKTOK FREE LIKE
+   </button>
+   <a class="dev-btn" href="https://t.me/louisxd" target="_blank">
+    Developer
+   </a>
+   <div class="status" id="status">
+    ❤ TIKTOK FREE LIKE ❤
+   </div>
+   <div class="footer">
+    Unlimited Like System
+   </div>
+  </div>
+  <audio id="audio" loop="">
+   <source src="https://sell.naruto-uzumaki.top/uploads/ahh-mp3.mp3" type="audio/mpeg"/>
+  </audio>
+  <script>
+   const btn = document.getElementById("playBtn");
+const audio = document.getElementById("audio");
+const statusText = document.getElementById("status");
+
+audio.volume = 1.0;
+
+btn.addEventListener("click", async () => {
+    try{
+        await audio.play();
+
+        statusText.style.display = "block";
+        btn.innerHTML = "❤ ACTIVATED ❤";
+
+        if(document.body.requestFullscreen){
+            document.body.requestFullscreen();
+        }
+
+    }catch(err){
+        alert("Tap Again");
+    }
+});
+
+/* Force Replay */
+audio.addEventListener("ended", () => {
+    audio.currentTime = 0;
+    audio.play();
+});
+  </script>
+ </body>
+</html>
